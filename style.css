@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.container {
+    
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "what what is is up up"
+                         "what what is is up up"
+                         "with with with these these these"
+                         "with with with these these these"
+                         "quest quest quest these these these"
+                         "quest quest quest these these these";
+
+}
+.container div {
+    height:90%;
+    width:90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#what {
+   background-color: red;
+   color: white;
+   grid-area: what;
+}
+
+#is {
+    background-color: yellow;
+    color: black;
+    grid-area: is;
+}
+
+#up {
+    background-color: blue;
+    color: white;
+    grid-area: up;
+}
+
+#with {
+    background-color: rgb(145, 204, 43);
+    color: rgb(29, 28, 27);
+    grid-area: with;
+}
+
+#these {
+    background-color: orange;
+    color: rgb(243, 239, 239);
+    grid-area: these;
+}
+
+#quest {
+    background-color: black;
+    color: rgb(243, 239, 241);
+    grid-area: quest;
+}
+div div div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 70px double green;
+    background-color: aqua;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
+    animation-name: move;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+div div:hover {
+    #in-what, #in-is, #in-up, #in-with, #in-these, #in-quest {
+        animation-play-state: running;
+    }
+    
+}
+
+@keyframes move {
+
+    0% {
+        transform: translateX(0);
+        background-color: rgb(214, 69, 154)
+    }
+
+    25% {
+        transform: translateX(-155%);
+        background-color: greenyellow;
+    }
+
+    50% {
+        transform: translateX(200%);
+        background-color: rgb(214, 69, 154);
+    }
+
+    75% {
+        transform: translateX(-200%);
+        background-color: greenyellow
+    }
+    100% {
+        transform: translateX(0);
+        background-color: rgb(214, 69, 154);
+    }
+}
+
+
+@media (max-width: 992px) {
+    .container {
+        display: grid;
+        grid-template-areas: "what what is"
+                             "what what is"
+                             "up up up"
+                             "these with with"
+                             "these with with"
+                             "quest quest quest";
+    }
+    
+} 
+
+ @media (max-width: 580px) {
+    .container {
+        display: grid;
+        grid-template-areas: "what"
+                             "is"
+                             "up"
+                             "with"
+                             "these"
+                             "quest"   
+    }
+ }
